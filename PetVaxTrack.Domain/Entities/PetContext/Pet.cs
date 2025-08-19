@@ -1,9 +1,11 @@
+using PetVaxTrack.Domain.ValueObjects;
+
 namespace PetVaxTrack.Domain.Entities.PetContext
 {
     public class Pet : BaseEntity
     {
-        public Pet(string firstName, string lastName, string identifier) 
-        : base(firstName, lastName)
+        public Pet(Name name, string lastName, string identifier) 
+        : base(name)
         {
             Identifier = identifier;
         }

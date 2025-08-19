@@ -1,18 +1,18 @@
+using PetVaxTrack.Domain.ValueObjects;
+
 namespace PetVaxTrack.Domain.Entities.PetContext
 {
     public abstract class BaseEntity
     {
-        protected BaseEntity(string firstName, string lastName)
+        protected BaseEntity(Name name)
         {
             Id = Guid.NewGuid();
-            FirstName = firstName;
-            LastName = lastName;
             CreatedDate = DateTime.UtcNow;
+            Name = name;
         }
 
         public Guid Id { get; private set; }
-        public string FirstName { get; private set; }
-        public string LastName { get; private set; }
+        public Name Name {get; private set; }
         public DateTime CreatedDate { get; private set; }
     }
 }

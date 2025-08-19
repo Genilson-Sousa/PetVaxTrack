@@ -1,19 +1,17 @@
+using PetVaxTrack.Domain.ValueObjects;
 
 namespace PetVaxTrack.Domain.Entities.PetContext
 {
     public class Owner : BaseEntity
     {
-        public Owner(string firstName, string lastName, string email, string documentNumber,int documentType) 
-        : base(firstName, lastName)
+        public Owner(Name name, string lastName, string email, Document document)
+        : base(name)
         {
             Email = email;
-            DocumentNumber = documentNumber;
-            DocumentType = documentType;
+            Document = document;
         }
         public string Email { get; private set; }
-        public string DocumentNumber { get; private set; }
-        public int DocumentType { get; private set; }
-
+        public Document Document { get; private set; }
         public void SetEmail(string email)
         {
             Email = email;

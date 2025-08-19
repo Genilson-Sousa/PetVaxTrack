@@ -9,7 +9,6 @@ namespace PetVaxTrack.Domain.Entities.VaccineContext
         }
         public Guid CategoryId { get; private set; }
         public Guid PetId { get; private set; }
-
         public override void SetDescription(string description)
         {
             base.SetDescription(description);
