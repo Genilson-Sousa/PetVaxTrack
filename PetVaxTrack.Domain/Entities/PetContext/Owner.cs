@@ -19,8 +19,11 @@ namespace PetVaxTrack.Domain.Entities.PetContext
         {
             var contracts = new ContractValidations<Owner>()
             .FirstNameIsOk(this.Name, 20, 5, "First name must be between 5 and 20 characters.", "firstName")
-            .LastNameIsOk(this.Name, 20, 5, "Last name must be between 5 and 20 characters.", "lastName");
-            return true; // Implement validation logic here
+            .LastNameIsOk(this.Name, 20, 5, "Last name must be between 5 and 20 characters.", "lastName")
+            .EmailIsValid(Email, "Invalid email format.", "email")
+            .DocumentIsValid(Document, "Invalid document format.", "document");
+
+            return contracts.IsValid(); // Implement validation logic here
         }
 
         public void SetEmail(string email)

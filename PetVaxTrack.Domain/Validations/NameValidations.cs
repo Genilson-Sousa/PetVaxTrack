@@ -16,7 +16,7 @@ namespace PetVaxTrack.Domain.Validations
         }
         public ContractValidations<T> LastNameIsOk(Name name, short maxLength, short minLength, string message, string propertyName)
         {
-            if (string.IsNullOrEmpty(name.LastName) || name.LastName.Length < maxLength || name.LastName.Length > maxLength)
+            if (string.IsNullOrEmpty(name.LastName) || name.LastName.Length < minLength || name.LastName.Length > maxLength)
             {
                 AddNotification(new Notification(message, propertyName));
             }

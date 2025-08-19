@@ -1,6 +1,5 @@
 using PetVaxTrack.Domain.Notifications;
 using PetVaxTrack.Domain.Validations.Interfaces;
-using PetVaxTrack.Domain.ValueObjects;
 
 namespace PetVaxTrack.Domain.Validations
 {
@@ -19,11 +18,6 @@ namespace PetVaxTrack.Domain.Validations
         public bool IsValid()
         {
             return _notifications.Count == 0;
-        }
-
-        internal object FirstNameIsOk(Name name, int v1, int v2, string v3)
-        {
-            throw new NotImplementedException();
         }
     }
 }
