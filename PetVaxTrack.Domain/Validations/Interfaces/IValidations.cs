@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PetVaxTrack.Domain.Validations.Interfaces
 {
-    public interface IValidation
+    public interface IValidations
     {
         bool Validation();
     }

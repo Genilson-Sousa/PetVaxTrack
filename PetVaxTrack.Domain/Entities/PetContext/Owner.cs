@@ -6,7 +6,7 @@ namespace PetVaxTrack.Domain.Entities.PetContext
 {
     public class Owner : BaseEntity, IContract
     {
-        public Owner(Name name, string lastName, string email, Document document)
+        public Owner(Name name, string email, Document document)
         : base(name)
         {
             Email = email;
@@ -18,14 +18,13 @@ namespace PetVaxTrack.Domain.Entities.PetContext
         public override bool Validation()
         {
             var contracts = new ContractValidations<Owner>()
-            .FirstNameIsOk(this.Name, 20, 5, "First name must be between 5 and 20 characters.", "firstName")
-            .LastNameIsOk(this.Name, 20, 5, "Last name must be between 5 and 20 characters.", "lastName")
-            .EmailIsValid(Email, "Invalid email format.", "email")
-            .DocumentIsValid(Document, "Invalid document format.", "document");
+                .FirstNameIsOk(this.Name, 20, 5, "O primeiro nome deve ter entre 5 e 20 caracteres.", "firstName")
+                .LastNameIsOk(this.Name, 20, 5, "O sobrenome deve ter entre 5 e 20 caracteres.", "lastName")
+                .EmailIsValid(Email, "Formato de e-mail inválido.", "email")
+                .DocumentIsValid(Document, "Formato de documento inválido.", "document");
 
-            return contracts.IsValid(); // Implement validation logic here
+            return contracts.IsValid(); // Implementar lógica de validação aqui
         }
-
         public void SetEmail(string email)
         {
             Email = email;

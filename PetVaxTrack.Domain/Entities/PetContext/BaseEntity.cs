@@ -4,7 +4,7 @@ using PetVaxTrack.Domain.ValueObjects;
 
 namespace PetVaxTrack.Domain.Entities.PetContext
 {
-    public abstract class BaseEntity : IValidation
+    public abstract class BaseEntity : IValidations
     {
         private List<Notification> _notifications = [];
         protected BaseEntity(Name name)
