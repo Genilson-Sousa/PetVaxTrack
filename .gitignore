@@ -1,6 +1,7 @@
 # Build directories
 bin/
 obj/
+artifacts/
 
 # Visual Studio
 .vs/
@@ -8,16 +9,29 @@ obj/
 *.user
 *.userosscache
 *.sln.docstates
+*.vcxproj.user
+
+# Rider
+.idea/
 
 # NuGet
 *.nupkg
 packages/
 project.lock.json
 project.fragment.lock.json
-artifacts/
+*.nuget.props
+*.nuget.targets
 
-# Rider
-.idea/
+# .NET Core / SDK
+*.dotnet/
+*.g.cs
+*.cache
 
-# Others
+# Logs and temp files
 *.log
+TestResults/
+coverage/
+
+# OS
+.DS_Store
+Thumbs.db
