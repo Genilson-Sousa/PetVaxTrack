@@ -13,15 +13,14 @@ namespace PetVaxTrack.Domain.Validations
                 {
                     AddNotification(new Notification(message, propertyName + " (CPF)"));
                 }
-
-                if (document.DocumentType == Enums.EdocumentType.CNPJ)
+            }
+            if (document.DocumentType == Enums.EdocumentType.CNPJ)
                 {
                     if (!isCnpj(document.DocumentNumber))
                     {
                         AddNotification(new Notification(message, propertyName + " (CNPJ)"));
                     }
                 }
-            }
 
             return this;
         }

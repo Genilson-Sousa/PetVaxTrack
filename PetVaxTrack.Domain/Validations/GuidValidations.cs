@@ -4,13 +4,13 @@ namespace PetVaxTrack.Domain.Validations
 {
     public partial class ContractValidations<T>
     {
-        public ContractValidations<T> GuidIsValid(object guid, string message, string propertyName)
+        public ContractValidations<T> GuidIsValid(object guidObj, string message, string propertyName)
         {
-            if (guid is Guid)
+            if ((guidObj is not Guid guid) || guid == Guid.Empty)
             {
                 AddNotification(new Notification(message, propertyName));
             }
-
+           
             return this;
         }
     }
