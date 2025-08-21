@@ -6,7 +6,7 @@ namespace PetVaxTrack.Domain.Entities.PetContext
 {
     public abstract class BaseEntity : IValidations
     {
-        private List<Notification> _notifications = [];
+        private List<Notification> _notifications;
         protected BaseEntity(Name name)
         {
             Id = Guid.NewGuid();

@@ -6,12 +6,16 @@ namespace PetVaxTrack.Domain.Entities.PetContext
 {
     public class Pet : BaseEntity, IContract
     {
-        public Pet(Name name, string identifier) 
+        public Pet(Name name, int age,Guid ownerId,int identifier) 
         : base(name)
         {
+            Age = age;
+            OwnerId = ownerId;
             Identifier = identifier;
         }
-        public string Identifier { get; private set; }
+        public int Age { get; private set; }
+        public Guid OwnerId { get; private set; }
+        public int Identifier { get; private set; }
 
         public override bool Validation()
         {
@@ -21,7 +25,7 @@ namespace PetVaxTrack.Domain.Entities.PetContext
 
             return contracts.IsValid(); 
         }
-        public void SetIdentifier(string identifier)
+        public void SetIdentifier(int identifier)
         {
             Identifier = identifier;
         }

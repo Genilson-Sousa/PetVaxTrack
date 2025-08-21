@@ -3,7 +3,7 @@ using PetVaxTrack.Domain.Notifications;
 
 namespace PetVaxTrack.Application.Output.Results
 {
-    public class Result : IResult
+    public class Result : IResultBase
     {
         private List<Notification> _notifications;
 
@@ -17,7 +17,7 @@ namespace PetVaxTrack.Application.Output.Results
         public int ResultCod { get; private set; }
         public string Message { get; private set; }
         public bool IsOk { get; private set; }
-        public object? Data { get; private set; }
+        public object Data { get; private set; } = new object();
         public IReadOnlyCollection<Notification> Notifications => _notifications;
         public void SetNotifications(List<Notification> notifications)
         {

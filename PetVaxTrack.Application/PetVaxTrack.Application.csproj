@@ -4,6 +4,10 @@
     <ProjectReference Include="..\PetVaxTrack.Domain\PetVaxTrack.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Input\Handdlers\VaccineContext\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
